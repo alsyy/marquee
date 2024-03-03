@@ -40,17 +40,16 @@ body{
 
     
     var today = new Date();
+    var result = date.toLocaleDateString("en-GB", { // you can use undefined as first argument
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+})
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
     var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
 
-var dateString;
 
-today.setDate(date.getDate());
-
-DateString = ('0' + today.getDate()).slice(-2) + '/'
-             + ('0' + (today.getMonth()+1)).slice(-2) + '/'
-             + today.getFullYear();
 
     var greet;
 
