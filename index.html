@@ -53,6 +53,8 @@ body{
     else if (hrs >= 17 && hrs <= 24)
         greet = 'boa noite  ';
 
+    ('00' + number).slice(-2);
+
     document.getElementById('lbl').innerHTML =
         greet+=`<div id="date">hj eh ${date}</div>`;
 </script> 
