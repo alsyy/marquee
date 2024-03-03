@@ -1,67 +1,55 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>oiiii</title>
-  <font face="courier new"><marquee>CANALHAS CANALHAS CANALHAS CANALHAS CANALHAS CANALHAS CANALHAS CANALHAS CANALHAS CANALHAS</marquee></font>
+  <title>oiiii</title>
+  <style>
+    #lbl {
+      font-family: monospace;
+      font-size: xx-large;
+      color: #626262;
+      padding: 5px;
+      border: 1px solid #ececec;
+      text-align: center;
+      line-height: 1.5;
+      height: 85%;
+    }
 
-<style>
-#lbl {
-    font-family: monospace;
-    font-size: xx-large;
-    color: #626262;
-    padding: 5px;
-    border: 1px solid #ececec;
-    text-align: center;
-    line-height: 1.5;
-    height:85%
+    #date {
+      font-size: large;
+    }
 
-
-}
-#date{
-    font-size:large;
-}
-body{
-    background-color: aliceblue;
-}
-    </style>
+    body {
+      background-color: aliceblue;
+    }
+  </style>
 </head>
 <body>
-    <div id="lbl"></div>
-</body>
+  <div id="lbl"></div>
 
-<script>
-    var weekday = new Array(7);
-    weekday[0] = "domingo";
-    weekday[1] = "segunda";
-    weekday[2] = "terça";
-    weekday[3] = "quarta";
-    weekday[4] = "quinta";
-    weekday[5] = "sexta";
-    weekday[6] = "sábado";
+  <script>
+    var weekday = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
 
-    
     var today = new Date();
-    var result = today.toLocaleDateString("en-GB", { // you can use undefined as first argument
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-})
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
 
+    // Add leading zeros to day and month
+    var day = today.getDate().toString().padStart(2, "0");
+    var month = (today.getMonth() + 1).toString().padStart(2, "0");
 
+    var date = dayOfWeek + " " + day + "/" + month + "/" + today.getFullYear();
 
     var greet;
 
-    if (hrs < 12)
-        greet = 'bom dia  ';
-    else if (hrs >= 12 && hrs <= 17)
-        greet = 'boa tarde ';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'boa noite  ';
+    if (hrs < 12) {
+      greet = "bom dia ";
+    } else if (hrs >= 12 && hrs <= 17) {
+      greet = "boa tarde ";
+    } else if (hrs >= 17 && hrs <= 24) {
+      greet = "boa noite ";
+    }
 
-    
-    document.getElementById('lbl').innerHTML =
-        greet+=`<div id="date">hj eh ${date}</div>`;
-</script> 
+    document.getElementById("lbl").innerHTML = `${greet}<div id="date">hj eh ${date}</div>`;
+  </script>
+</body>
 </html>
