@@ -44,6 +44,14 @@ body{
     var dayOfWeek = weekday[today.getDay()];
     var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
 
+var dateString;
+
+today.setDate(MyDate.getDate());
+
+DateString = ('0' + today.getDate()).slice(-2) + '/'
+             + ('0' + (today.getMonth()+1)).slice(-2) + '/'
+             + today.getFullYear();
+
     var greet;
 
     if (hrs < 12)
