@@ -29,20 +29,27 @@ body{
 
 <script>
     var weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+    weekday[1] = "segunda";
+    weekday[2] = "terça";
+    weekday[3] = "quarta";
+    weekday[4] = "quinta";
+    weekday[5] = "sexta";
+    weekday[6] = "sábado";
+    weekday[7] = "domingo";
 
     
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
+    var date = dayOfWeek+" " + today.getDate().format + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
+    
+function padWithLeadingZeros(num, totalLength) {
+  return String(num).padStart(totalLength, '0');
+}
 
+console.log(padWithLeadingZeros(3, 2)); // 👉️ "03"
+console.log(padWithLeadingZeros(100, 2)); // 👉️ "100"
+    
     var greet;
 
     if (hrs < 12)
