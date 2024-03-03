@@ -42,14 +42,6 @@ body{
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
     var date = dayOfWeek+" " + today.getDate().format + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
-    
-function padWithLeadingZeros(num, totalLength) {
-  return String(num).padStart(totalLength, '0');
-}
-
-console.log(padWithLeadingZeros(3, 2)); // 👉️ "03"
-console.log(padWithLeadingZeros(100, 2)); // 👉️ "100"
-    
     var greet;
 
     if (hrs < 12)
